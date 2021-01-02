@@ -35,5 +35,7 @@ int main(){
     int pos = find_previous_strain(strain, size, new_strain);
     new_stress = stress[pos] + (new_strain - strain[pos]) * (stress[pos + 1] - stress[pos])/(strain[pos + 1] - strain[pos]);
     cout << "The interpolated stress is : " << new_stress << endl;
+    delete[] stress;
+    delete[] strain;
     return 0;
 }

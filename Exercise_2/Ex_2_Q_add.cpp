@@ -39,6 +39,11 @@ int main(){
         res_matrix[i] = sum;
         cout << res_matrix[i] << endl;
     }
+    delete [] res_matrix;
+    delete [] col_matrix;
+    for (int i = 0; i < size; i++)
+        delete matrix[i];
+    delete[] matrix;
     return 0;
 
 
