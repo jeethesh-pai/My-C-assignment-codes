@@ -24,11 +24,11 @@ double mySqrt(double S){
 }
 int main(int argc, char **argv){
     double S;
-    // the commented part of the program is for command line arguments
+    //the commented part of the program is for command line arguments
 //    stringstream as;
-//    as >> argv[1];
+//    as << argv[1];
 //    double a;
-//    as << a;
+//    as >> a;
 //    cout << "a: " <<  a << endl;
 //    cout << "Entered number is : " << argv[1] << endl;
 //    double S1 = atof(argv[1]);
