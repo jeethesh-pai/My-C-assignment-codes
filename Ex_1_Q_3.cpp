@@ -2,6 +2,8 @@
 // Created by Jeethesh on 01-01-2021.
 //
 #include<iostream>
+#include<cstdlib>
+#include<sstream>
 using namespace std;
 double mySqrt(double S){
     if (S < 0)
@@ -20,11 +22,20 @@ double mySqrt(double S){
         return x_new;
     }
 }
-int main(){
+int main(int argc, char **argv){
     double S;
-    cout << "Enter a number is : ";
+    // the commented part of the program is for command line arguments
+//    stringstream as;
+//    as >> argv[1];
+//    double a;
+//    as << a;
+//    cout << "a: " <<  a << endl;
+//    cout << "Entered number is : " << argv[1] << endl;
+//    double S1 = atof(argv[1]);
+//    cout << S1 + 2.004 << endl;
+    cout << "Enter a number is :";
     cin >> S;
-    cout << "Square root using Bhakshali Method is: ";
+    cout << endl << "Square root using Bhakshali Method is: ";
     double sqrt = mySqrt(S);
     cout << sqrt;
     return 0;
