@@ -1,0 +1,9 @@
+#####Key_value_File Details
+#####These are comment lines##### 
+###and needs to be skipped####
+Tempe456rature  :    &&&§$§  85 degc
+Press234ure  :   :;:""  1 Kpa
+Mol5432:    )() 45 
+Vol34354ume  :    $§$%$     2 L
+Wei45466ght  : 56 gm
+Molec87565ular_weight:  (/(&/%/ 50 gm
