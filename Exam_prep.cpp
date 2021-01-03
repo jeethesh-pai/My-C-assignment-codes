@@ -5,7 +5,7 @@
 #include<map>
 #include<fstream>
 using namespace std;
-int main(){
+int main(int argc, char** argv){
     fstream fin("D:/TU Braunschweig Data/Introduction to C++/Exercises/SomeText.txt", ios::in);
     int value;
     map<string, int> configInfo;
@@ -41,14 +41,34 @@ int main(){
             }
         }
         cout << "The read values are as follows: " << endl;
-        for(auto it = configInfo.begin(); it != configInfo.end(); it++){
+        for(auto it = configInfo.begin(); it != configInfo.end(); it++)
             cout << "Key: " << it->first << " \t Value: " << it->second << endl;
+
+        cout << "The Below program is implementing command line arguments: " << endl;
+
+        // The following program is to read some arguments from the command line and do necessary actions
+        string add("--add");
+        string replace("--replace");
+        string del_key("--delete");
+        for (int i = 1; i < argc; i++) {
+            if (add.compare(argv[i]) == 0) {
+                string key(argv[i + 1]);
+                int value = stoi(argv[i + 2]);
+                configInfo.insert(std::pair<string, int>(key, value));
+                i = i + 3;
+            } else if (replace.compare(argv[i]) == 0) {
+                auto it = configInfo.find(argv[i + 1]);
+                it->second = stoi(argv[i + 2]);
+                i = i + 3;
+            } else if (del_key.compare(argv[i]) == 0) {
+                auto it = configInfo.find(argv[i + 1]);
+                if (it == configInfo.end())
+                    throw runtime_error("Key not found in the file...");
+                else
+                    configInfo.erase(it);
+                i = i + 2;
+            }
         }
-        string query_key;
-        cout << "Enter key to find in the map: ";
-        cin >> query_key;
-        auto it = configInfo.find(query_key);
-        configInfo.erase(it);
         cout << "The read values are as follows: " << endl;
         for(auto it = configInfo.begin(); it != configInfo.end(); it++)
             cout << "Key: " << it->first << " \t Value: " << it->second << endl;
